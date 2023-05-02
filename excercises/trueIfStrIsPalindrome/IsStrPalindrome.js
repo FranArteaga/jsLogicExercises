@@ -3,7 +3,7 @@
 
 const checkForPalindrome = (someString) => {
     //taking the introduced string, changing it to lower case and removing spaces with replaceAll
-    strWithoutSpaces = someString.toLowerCase().replaceAll(" ", "")
+    strWithoutSpaces = someString.toLowerCase().replaceAll(" ", "").replaceAll(",", "")
     console.log("String without spaces:", strWithoutSpaces)
 
     //initialized array to store each character in the string by iterating through it
@@ -17,14 +17,15 @@ const checkForPalindrome = (someString) => {
     const reversedStr = reversedArrToStr.replaceAll(",", "")
     console.log("Reversed string without spaces:", reversedStr)
 
-    return
-
-    // if (strWithoutSpaces === strWithoutSpacesReverse) {
-    //     return (`the sentence ${someString} is a palindrome`)
-    // } else {
-    //     return (`the sentence ${someString} is not a palindrome`)
-    // }
-
+    //comparing first string to reversed string. both in lowerCase and without spaces
+    if (strWithoutSpaces === reversedStr) {
+        return (
+            `PALINDROME: ${true}. The introduced sentence "${someString}" is a palindrome: ${reversedStr}`
+        )
+    } else {
+        return (
+            `PALINDROME: ${false}. The introduced sentence "${someString}" is NOT a palindrome: ${reversedStr}`
+        )
+    }
 }
-
-console.log(checkForPalindrome("AnitaLavalatina"))
+console.log(checkForPalindrome("No lEmon, No meLon"))

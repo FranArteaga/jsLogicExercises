@@ -3,7 +3,8 @@
 
 const checkForPalindrome = (someString) => {
     //taking the introduced string, changing it to lower case and removing spaces with replaceAll
-    strWithoutSpaces = someString.toLowerCase().replaceAll(" ", "").replaceAll(",", "")
+    //changed replaceAll with replace and a regular expression applied globally (/g)
+    strWithoutSpaces = someString.toLowerCase().replace(/[ ,.!?/\n]/g, "")
     console.log("String without spaces:", strWithoutSpaces)
 
     //initialized array to store each character in the string by iterating through it
@@ -28,4 +29,4 @@ const checkForPalindrome = (someString) => {
         )
     }
 }
-console.log(checkForPalindrome("No lEmon, No meLon"))
+console.log(checkForPalindrome("? No Lemon, No melOn! /."))

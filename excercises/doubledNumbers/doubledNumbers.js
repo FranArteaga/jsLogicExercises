@@ -4,5 +4,8 @@
 const arrOfNums = [2, 3 ,6, 1, 3, 12, 7, 15]
 
 const doublingNumsInArray = (someArr) => {
-    
+    return someArr.map (number => {
+       return number*2
+    })
 }
+console.log(doublingNumsInArray(arrOfNums))

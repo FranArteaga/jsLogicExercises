@@ -16,3 +16,9 @@ const arrOfObjects = [
     },
 ]
 
+const getNameFromArray = (someArr) => {
+    let arrOnlyNames = []
+    someArr.forEach(user => arrOnlyNames.push(user.name))
+    return arrOnlyNames
+}
+console.log(getNameFromArray(arrOfObjects))

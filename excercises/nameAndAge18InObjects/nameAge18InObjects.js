@@ -8,7 +8,7 @@ const citizens = [
     },
     {
         name: 'Bob',
-        age: 15
+        age: 19
     },
     {
         name: 'Charlie',
@@ -16,11 +16,22 @@ const citizens = [
     },
     {
         name: 'David',
-        age:26
+        age: 26
     },
     {
-        name:'Emily',
+        name: 'Emily',
         age: 17
     }
 ]
 
+const usersThatCanVote = (arrOfUsers) => {
+    let citizen18OrOlder = []
+    arrOfUsers.forEach(user => {
+        if (user.age >= 18) {
+            citizen18OrOlder.push(user)
+        }
+    })
+    return citizen18OrOlder
+}
+
+console.log(usersThatCanVote(citizens))
